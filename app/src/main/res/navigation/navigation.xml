@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/nav_product">
+
+    <fragment
+        android:id="@+id/nav_product"
+        android:name="com.example.refillsystem.UI.ProductFragment"
+        android:label="@+string/tittle_ProductList"
+        tools:layout="@layout/product_fragment"
+        >
+        <action
+            android:id="@+id/action_nav_product_to_nav_sizes"
+            app:destination="@id/nav_sizes" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_sizes"
+        android:name="com.example.refillsystem.UI.SelectSizeFragment"
+        android:label="@+string/tittle_SizeList"
+        tools:layout="@layout/select_size_fragment"
+        >
+        <action
+            android:id="@+id/action_nav_sizes_to_nav_placeContainer"
+            app:destination="@id/nav_placeContainer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_placeContainer"
+        android:name="com.example.refillsystem.UI.PlaceContainerFragment"
+        android:label="@+string/tittle_PlaceContainer"
+        tools:layout="@layout/fragment_place_container"
+        >
+        <action
+            android:id="@+id/action_nav_placeContainer_to_nav_waiting"
+            app:destination="@id/nav_waitForRefill" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_waitForRefill"
+        android:name="com.example.refillsystem.UI.WaitForRefillFragment"
+        android:label="@+string/tittle_WaitForRefill"
+        tools:layout="@layout/fragment_wait_for_refill"
+        >
+        <action
+            android:id="@+id/action_nav_waitForRefill_to_nav_Completed"
+            app:destination="@id/nav_refillCompleted" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_refillCompleted"
+        android:name="com.example.refillsystem.UI.RefillCompletedFragment"
+        android:label="@+string/tittle_RefillCompleted"
+        tools:layout="@layout/fragment_refill_completed"
+        >
+        <action
+            android:id="@+id/action_nav_completed_to_nav_product"
+            app:destination="@id/nav_product" />
+    </fragment>
+
+
+
+
+
+</navigation>
